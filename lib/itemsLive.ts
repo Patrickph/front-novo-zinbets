@@ -101,7 +101,7 @@ export const itemsLive = [
     key: 711,
     name: "Fútbol Studio",
     href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/1x1-en.avif`,
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/1x1-en.png`,
     active: false,
   },
   {
