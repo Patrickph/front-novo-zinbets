@@ -40,7 +40,7 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
   const startGame = async (slug: string) => {
     setIsLoading(true)
 
-    const response = await api.get<StartGame>(`/games/game-provider/start-game/${slug}`)
+    const response = await api.get<StartGame>(`/games/game-provider/start-game/new/${slug}`)
       .finally(() => {
         setIsLoading(false);
       });
