@@ -193,7 +193,13 @@ export default function Deposit() {
 
           <Image
             unoptimized
-            src={"data:image/gif;base64," + pix?.pix_qr_code}
+            src={
+              pix?.pix_qr_code
+                ? pix?.pix_qr_code.includes("data:image/gif;base64,")
+                  ? "data:image/gif;base64," + pix?.pix_qr_code
+                  : pix?.pix_qr_code
+                : ""
+            }
             width={200}
             height={200}
             alt="pix"
