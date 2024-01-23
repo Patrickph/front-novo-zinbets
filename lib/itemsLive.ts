@@ -1,177 +1,219 @@
 export const itemsLive = [
   {
-    key: 15,
-    name: "Live Casino - Mega Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/mega-roulette-pragmatic.jpg`,
-    active: false,
+    key: 833,
+    name: "XXXtreme Lightning Roulette",
+    href: "/game/XxxtremeLigh0001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/XxxtremeLigh0001.webp`,
+  
   },
   {
-    key: 16,
-    name: "Brazilian Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/brazilian-roulette.png`,
-    active: false,
+    key: 805,
+    name: "Bac Bo",
+    href: "/game/BacBo00000000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/BacBo00000000001.webp`,
+  
   },
   {
-    key: 688,
-    name: "Ultimate Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/ezugi-ultimate-roulette-news-1.jpg`,
-    active: false,
-  },
-  {
-    key: 595,
-    name: "Blackjack 28 - Azure (Azure Studio II) ",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/bj28.jpg`,
-    active: false,
-  },
-  {
-    key: 698,
+    key: 831,
     name: "Crazy Time",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/crazy_time_thumbnail_winter_branded_1080x1080_10_01+(1).png`,
-    active: false,
+    href: "/game/CrazyTime0000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/CrazyTime0000001.webp`,
+  
   },
   {
-    key: 6,
-    name: "Mega Baccarat",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/MegaBaccarat.jpg`,
-    active: false,
+    key: 845,
+    name: "Football Studio",
+    href: "/game/TopCard000000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/TopCard000000001.webp`,
+  
   },
   {
-    key: 17,
-    name: "Dragon Tiger",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/dragon_tiger.jpeg`,
-    active: false,
+    key: 820,
+    name: "Auto-Roulette",
+    href: "/game/8z5pjps3ntvqc1b",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/8z5pjps3ntvqc1b.webp`,
+  
   },
   {
-    key: 522,
-    name: "Speed Auto Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/2-6.png`,
-    active: false,
+    key: 846,
+    name: "Immersive Roulette",
+    href: "/game/7x0b1tgh7agmf6hv",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/7x0b1tgh7agmf6hv.webp`,
+  
   },
   {
-    key: 581,
-    name: "Blackjack 42 - Ruby",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/bj42.webp`,
-    active: false,
+    key: 853,
+    name: "Auto-Roulette VIP",
+    href: "/game/01rb77cq1gtenhmo",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/01rb77cq1gtenhmo.webp`,
+  
   },
   {
-    key: 504,
-    name: "Live Casino - Sweet Bonanza",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/1-16.jpg`,
-    active: false,
+    key: 855,
+    name: "Speed Roulette",
+    href: "/game/lkcbrbdckjxajdol",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/lkcbrbdckjxajdol.webp`,
+  
   },
   {
-    key: 516,
-    name: "Roulette 1 Azure ",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/50a38f49-728b-45c9-b0af-318627389367.webp`,
-    active: false,
+    key: 808,
+    name: "Football Studio Dice",
+    href: "/game/TopDice000000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/TopDice000000001.webp`,
+  
   },
   {
-    key: 686,
-    name: "Andar Bahar",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/andar_bahar_thumbnail_1080x1080_2023_09.png`,
-    active: false,
-  },
-  {
-    key: 562,
-    name: "Blackjack 61 - Azure",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/bj61.png`,
-    active: false,
-  },
-  {
-    key: 687,
-    name: "Casino Hold´em Live",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/evolution-casino-hold-em.jpg`,
-    active: false,
-  },
-  {
-    key: 711,
-    name: "Fútbol Studio",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/1x1-en.png`,
-    active: false,
-  },
-  {
-    key: 694,
-    name: "Dream Catcher",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/dream_catcher_thumbnail_1080x1080_2021_01_03+(1).png`,
-    active: false,
-  },
-  {
-    key: 497,
-    name: "Live Casino - Mega Wheel ",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/1-7.jpg`,
-    active: false,
-  },
-  {
-    key: 18,
-    name: "Power Up Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/powerup-roulette.png`,
-    active: false,
-  },
-  {
-    key: 692,
-    name: "2 Hand Casino Holdem",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/2-Hand-Casino-Hold_em_thumbnail-400x225.jpg`,
-    active: false,
-  },
-  {
-    key: 714,
-    name: "Roleta ao Vivo",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/gbQrvFXPvkdoXx.webp`,
-    active: false,
-  },
-  {
-    key: 491,
-    name: "Live Casino - Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/roulette-2.webp`,
-    active: false,
-  },
-  {
-    key: 701,
+    key: 830,
     name: "Lightning Roulette",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/lightning_roulette.webp`,
-    active: false,
+    href: "/game/LightningTable01",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/LightningTable01.webp`,
+  
   },
   {
-    key: 706,
-    name: "Crazy Time A",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/crazy_time_thumbnail_1080x1080_2020_05_01+(1).png`,
-    active: false,
+    key: 841,
+    name: "Football Studio Roulette",
+    href: "/game/7nyiaws9tgqrzaz3",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/7nyiaws9tgqrzaz3.webp`,
+  
   },
   {
-    key: 623,
-    name: "Speed Baccarat 13",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/sb13.jpg`,
-    active: false,
+    key: 809,
+    name: "Monopoly Live",
+    href: "/game/Monopoly00000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/Monopoly00000001.webp`,
+  
   },
   {
-    key: 719,
-    name: "Ruleta Relámpago en Vivo",
-    href: "/",
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/ruleta-relampago-en-vivo.webp`,
-    active: false,
+    key: 867,
+    name: "Fan Tan",
+    href: "/game/FanTan0000000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/FanTan0000000001.webp`,
+  
+  },
+  {
+    key: 822,
+    name: "Gold Vault Roulette",
+    href: "/game/GoldVaultRo00001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/GoldVaultRo00001.webp`,
+  
+  },
+  {
+    key: 816,
+    name: "Dragon Tiger",
+    href: "/game/DragonTiger00001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/DragonTiger00001.webp`,
+  
+  },
+  {
+    key: 874,
+    name: "Monopoly Big Baller",
+    href: "/game/MonBigBaller0001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/MonBigBaller0001.webp`,
+  
+  },
+  {
+    key: 834,
+    name: "Teen Patti",
+    href: "/game/teenpattitable01",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/teenpattitable01.webp`,
+  
+  },
+  {
+    key: 856,
+    name: "American Roulette",
+    href: "/game/AmericanTable001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/AmericanTable001.webp`,
+  
+  },
+  {
+    key: 863,
+    name: "Baccarat",
+    href: "/game/oytmvb9m1zysmc44",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/oytmvb9m1zysmc44.webp`,
+  
+  },
+  {
+    key: 807,
+    name: "Grand Casino Roulette",
+    href: "/game/lr6t4k3lcd4qgyrk",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/lr6t4k3lcd4qgyrk.webp`,
+  
+  },
+  {
+    key: 802,
+    name: "Double Ball Roulette",
+    href: "/game/DoubleBallRou001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/DoubleBallRou001.webp`,
+  
+  },
+  {
+    key: 824,
+    name: "Triple Card Poker",
+    href: "/game/TRPTable00000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/TRPTable00000001.webp`,
+  
+  },
+  {
+    key: 876,
+    name: "Auto-Roulette La Partage",
+    href: "/game/f1f4rm9xgh4j3u2z",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/f1f4rm9xgh4j3u2z.webp`,
+  
+  },
+  {
+    key: 802,
+    name: "Prosperity Tree Baccarat",
+    href: "/game/PTBaccarat000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/PTBaccarat000001.webp`,
+  
+  },
+  {
+    key: 849,
+    name: "Roulette",
+    href: "/game/vctlz20yfnmp1ylr",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/vctlz20yfnmp1ylr.webp`,
+  
+  },
+  {
+    key: 868,
+    name: "Caribbean Stud Poker",
+    href: "/game/CSPTable00000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/CSPTable00000001.webp`,
+  
+  },
+  {
+    key: 869,
+    name: "Super Sic Bo",
+    href: "/game/SuperSicBo000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/SuperSicBo000001.webp`,
+  
+  },
+  {
+    key: 865,
+    name: "Lightning Baccarat",
+    href: "/game/LightningBac0001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/LightningBac0001.webp`,
+  
+  },
+  {
+    key: 871,
+    name: "Dream Catcher",
+    href: "/game/MOWDream00000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/MOWDream00000001.webp`,
+  
+  },
+  {
+    key: 873,
+    name: "Lightning Dice",
+    href: "/game/LightningDice001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/LightningDice001.webp`,
+  
+  },
+  {
+    key: 873,
+    name: "Extreme Texas Hold'em",
+    href: "/game/ETHTable00000001",
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/live/ETHTable00000001.webp`,
+  
   },
 ]
