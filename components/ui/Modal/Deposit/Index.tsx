@@ -119,15 +119,15 @@ export default function Deposit() {
         <div className="flex gap-2 overflow-x-auto p-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 mb-2">
           <div
             className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
-            onClick={() => setValue("amount", "R$ 20,00")}
-          >
-            R$20,00
-          </div>
-          <div
-            className="cursor-pointer  bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
             onClick={() => setValue("amount", "R$ 30,00")}
           >
             R$30,00
+          </div>
+          <div
+            className="cursor-pointer  bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            onClick={() => setValue("amount", "R$ 40,00")}
+          >
+            R$40,00
           </div>
           <div
             className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
