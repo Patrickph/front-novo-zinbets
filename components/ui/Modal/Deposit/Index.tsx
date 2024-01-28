@@ -1,53 +1,53 @@
-"use client"
-import { useForm } from "react-hook-form"
-import * as yup from "yup"
-import { yupResolver } from "@hookform/resolvers/yup"
-import CountDown from "../../CountDown/Index"
-import Input from "../../Form/Input"
-import Image from "next/image"
-import { useState } from "react"
-import { api } from "@/lib/api"
-import { formatBRL } from "@/utils/currency"
-import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage"
-import copyText from "@/utils/copyText"
-import { CircleDollarSign, DollarSign } from "lucide-react"
+"use client";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import CountDown from "../../CountDown/Index";
+import Input from "../../Form/Input";
+import Image from "next/image";
+import { useState } from "react";
+import { api } from "@/lib/api";
+import { formatBRL } from "@/utils/currency";
+import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage";
+import copyText from "@/utils/copyText";
+import { CircleDollarSign, DollarSign } from "lucide-react";
 
 interface IFormInputs {
-  amount: string
-  bonus: boolean
+  amount: string;
+  bonus: boolean;
 }
 
 type Pix = {
-  message: string
-  pix_url: string
-  pix_qr_code: string
-  amount: number
-}
+  message: string;
+  pix_url: string;
+  pix_qr_code: string;
+  amount: number;
+};
 
 const schema = yup
   .object({
     amount: yup
       .string()
-      .test("is-num", "Valor mínimo de R$1,00", value => {
-        if (!value) return false
-        const amount = value.replace(/[^0-9]/g, "")
+      .test("is-num", "Valor mínimo de R$1,00", (value) => {
+        if (!value) return false;
+        const amount = value.replace(/[^0-9]/g, "");
         if (parseInt(amount) < 100) {
-          return false
+          return false;
         }
 
-        return true
+        return true;
       })
       .required("Valor Obrigatório"),
     terms: yup
       .boolean()
       .oneOf([true], "Você deve aceitar os termos e condições"),
   })
-  .required()
+  .required();
 
 export default function Deposit() {
-  const [messageError, setMessageError] = useState({ type: "", message: "" })
-  const [isLoading, setIsLoading] = useState(false)
-  const [pix, setPix] = useState<Pix>()
+  const [messageError, setMessageError] = useState({ type: "", message: "" });
+  const [isLoading, setIsLoading] = useState(false);
+  const [pix, setPix] = useState<Pix>();
 
   const {
     register,
@@ -57,35 +57,35 @@ export default function Deposit() {
     formState: { errors },
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
-  })
+  });
 
   const onSubmit = async (data: IFormInputs) => {
-    const amount = data.amount.replace(/[^0-9]/g, "")
-    const bonus = data.bonus
-    setIsLoading(true)
-    setPix(undefined)
-    setMessageError({ type: "", message: "" })
+    const amount = data.amount.replace(/[^0-9]/g, "");
+    const bonus = data.bonus;
+    setIsLoading(true);
+    setPix(undefined);
+    setMessageError({ type: "", message: "" });
 
     await api
       .post("/payment/deposit/add-credit", {
         amount,
         has_bonus: bonus,
       })
-      .then(response => {
-        setPix(response.data)
+      .then((response) => {
+        setPix(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         if (error.response) {
           setMessageError({
             type: "error",
             message: error.response.data.message,
-          })
+          });
         }
       })
       .finally(() => {
-        setIsLoading(false)
-      })
-  }
+        setIsLoading(false);
+      });
+  };
 
   return (
     <>
@@ -119,9 +119,9 @@ export default function Deposit() {
         <div className="flex gap-2 overflow-x-auto p-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 mb-2">
           <div
             className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
-            onClick={() => setValue("amount", "R$ 30,00")}
+            onClick={() => setValue("amount", "R$ 20,00")}
           >
-            R$30,00
+            R$20,00
           </div>
           <div
             className="cursor-pointer  bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
@@ -219,5 +219,5 @@ export default function Deposit() {
         </div>
       )}
     </>
-  )
+  );
 }

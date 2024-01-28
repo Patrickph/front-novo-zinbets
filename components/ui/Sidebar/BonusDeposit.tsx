@@ -1,9 +1,9 @@
-"use client"
-import { useModal } from "@/contexts/ModalContext"
-import Image from "next/image"
+"use client";
+import { useModal } from "@/contexts/ModalContext";
+import Image from "next/image";
 
 export default function BonusDeposit() {
-  const { setOpenModal } = useModal()
+  const { setOpenModal } = useModal();
 
   return (
     <div
@@ -16,7 +16,7 @@ export default function BonusDeposit() {
         height={31}
         alt=""
       />
-      Ganhe R$10 grátis
+      Ganhe R$20 grátis
     </div>
-  )
+  );
 }
