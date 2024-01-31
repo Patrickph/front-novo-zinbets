@@ -1376,7 +1376,7 @@ video {
 }
 .bg-green-500 {
   --tw-bg-opacity: 1;
-  background-color: #30a46c;
+  background-color: #8845fa;
 }
 .bg-green-500\/20 {
   background-color: rgb(59 251 130 / 0.2);
@@ -1513,6 +1513,14 @@ video {
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
+.bg-double-players {
+  background-color: rgb(18 11 28 / 80%);
+}
+
+.bg-double-players-amount {
+  background-color: rgb(44 29 64 / 80%);
+}
+
 .fill-current {
   fill: currentColor;
 }

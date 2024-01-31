@@ -28,7 +28,7 @@ export default function ListBetsMines() {
 
   return (
     <>
-      <div className="rounded bg-zinc-700 p-6 flex flex-col gap-6">
+      <div className="rounded border border-white/10 bg-[#0d0716] p-6 flex flex-col gap-6">
         <div className="w-full flex items-center justify-between border-b border-zinc-500">
           <h4 className="border-b-4 border-green-500 px-4 py-4 text-xs font-semibold">
             APOSTAS
@@ -37,7 +37,7 @@ export default function ListBetsMines() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-          <div className="w-full shadow-sm bg-zinc-800 rounded-xl p-2">
+          <div className="w-full shadow-sm bg-double-players rounded-xl p-2">
             <div className="w-full flex justify-between items-center py-2 px-2 border-b-2 border-zinc-400/50">
               <div className="uppercase text-xs font-semibold">Vitória 2X</div>
               <div className="rounded bg-green-500 h-8 w-8 flex items-center justify-center">
@@ -51,7 +51,7 @@ export default function ListBetsMines() {
             </div>
 
             <table className="w-full shadow rounded-md overflow-hidden">
-              <thead className="bg-zinc-700 p-2 text-xs rounded-md">
+              <thead className="bg-double-players-amount p-2 text-xs rounded-md">
                 <tr>
                   <th className="text-left p-3 w-2/5">Usuário</th>
                   <th className="text-right p-3">Quantia</th>
@@ -76,7 +76,7 @@ export default function ListBetsMines() {
             </div>
           </div>
 
-          <div className="w-full shadow-sm bg-zinc-800 rounded-xl p-2">
+          <div className="w-full shadow-sm bg-double-players rounded-xl p-2">
 
             <div className="w-full flex justify-between items-center py-2 px-2 border-b-2 border-zinc-400/50">
               <div className="uppercase text-xs font-semibold">Vitória 14X</div>
@@ -91,7 +91,7 @@ export default function ListBetsMines() {
             </div>
 
             <table className="w-full shadow rounded-md overflow-hidden">
-              <thead className="bg-zinc-700 p-2 text-xs rounded-md">
+              <thead className="bg-double-players-amount p-2 text-xs rounded-md">
                 <tr>
                   <th className="text-left p-3 w-2/5">Usuário</th>
                   <th className="text-right p-3">Quantia</th>
@@ -115,7 +115,7 @@ export default function ListBetsMines() {
             </div>
           </div>
 
-          <div className="w-full shadow-sm bg-zinc-800 rounded-xl p-2">
+          <div className="w-full shadow-sm bg-double-players rounded-xl p-2">
 
             <div className="w-full flex justify-between items-center py-2 px-2 border-b-2 border-zinc-400/50">
               <div className="uppercase text-xs font-semibold">Vitória 2X</div>
@@ -130,7 +130,7 @@ export default function ListBetsMines() {
             </div>
 
             <table className="w-full shadow rounded-md overflow-hidden">
-              <thead className="bg-zinc-700 p-2 text-xs rounded-md">
+              <thead className="bg-double-players-amount p-2 text-xs rounded-md">
                 <tr>
                   <th className="text-left p-3 w-2/5">Usuário</th>
                   <th className="text-right p-3">Quantia</th>
