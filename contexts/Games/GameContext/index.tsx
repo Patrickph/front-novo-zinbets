@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Game, GameContextProviderProps, StartGame } from "./types";
 import { api } from "@/lib/api";
@@ -12,64 +12,69 @@ interface GameContextType {
   iframeGame: string | null;
 }
 
-export const GameContext = createContext<GameContextType>({} as GameContextType)
+export const GameContext = createContext<GameContextType>(
+  {} as GameContextType
+);
 
 export const GameContextProvider = ({ children }: GameContextProviderProps) => {
-  const { push } = useRouter()
-  const { user } = useAuth()
-  const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [game, setGame] = useState<Game | null>(null)
-  const [iframeGame, setIframeGame] = useState<string | null>(null)
+  const { push } = useRouter();
+  const { user } = useAuth();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [game, setGame] = useState<Game | null>(null);
+  const [iframeGame, setIframeGame] = useState<string | null>(null);
 
   const fetchGame = async (slug: string) => {
-    setIsLoading(true)
+    setIsLoading(true);
 
-    await api.get<Game>(`/games/game-provider/${slug}`)
-      .then(response => {
-        setGame(response.data)
+    await api
+      .get<Game>(`/games/game-provider/${slug}`)
+      .then((response) => {
+        setGame(response.data);
       })
-      .catch(error => {
-        push('/')
+      .catch((error) => {
+        push("/");
       })
       .finally(() => {
         setIsLoading(false);
       });
-
-  }
+  };
 
   const startGame = async (slug: string) => {
-    setIsLoading(true)
+    setIsLoading(true);
 
-    const response = await api.get<StartGame>(`/games/game-provider/start-game/new/${slug}`)
+    const response = await api
+      .get<StartGame>(`/games/game-provider/start-game/${slug}`)
       .finally(() => {
         setIsLoading(false);
       });
 
-    setIframeGame(response.data.data.game_url)
-  }
+    setIframeGame(response.data.data.game_url);
+  };
 
   useEffect(() => {
     if (game?.slug && user) {
-      startGame(game.slug)
+      startGame(game.slug);
     }
-  }, [game, user])
+  }, [game, user]);
 
   return (
-    <GameContext.Provider value={{
-      isLoading,
-      game,
-      fetchGame,
-      iframeGame
-    }}>
+    <GameContext.Provider
+      value={{
+        isLoading,
+        game,
+        fetchGame,
+        iframeGame,
+      }}
+    >
       {children}
     </GameContext.Provider>
-  )
+  );
 };
 
 export const useGame = () => {
-  const context = useContext(GameContext)
+  const context = useContext(GameContext);
   if (context === undefined) {
-    throw new Error('useGame está fora de ThemeProvider.')
+    throw new Error("useGame está fora de ThemeProvider.");
   }
-  return context
-}
+  return context;
+};
