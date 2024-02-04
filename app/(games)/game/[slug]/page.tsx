@@ -1,39 +1,39 @@
-"use client"
-import SignIn from "@/components/ui/Header/SignIn"
-import { useAuth } from "@/contexts/AuthContext"
-import { useGame } from "@/contexts/Games/GameContext"
-import { ViewfinderCircleIcon } from "@heroicons/react/20/solid"
-import { LockClosedIcon } from "@heroicons/react/24/outline"
-import { useEffect, useState } from "react"
+"use client";
+import SignIn from "@/components/ui/Header/SignIn";
+import { useAuth } from "@/contexts/AuthContext";
+import { useGame } from "@/contexts/Games/GameContext";
+import { ViewfinderCircleIcon } from "@heroicons/react/20/solid";
+import { LockClosedIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 
 type PageProps = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export default function GameProviderPage({ params }: PageProps) {
-  const { user } = useAuth()
-  const { slug } = params
-  const { game, fetchGame, isLoading, iframeGame } = useGame()
-  const [isFullScreen, setIsFullScreen] = useState<boolean>(false)
+  const { user } = useAuth();
+  const { slug } = params;
+  const { game, fetchGame, isLoading, iframeGame } = useGame();
+  const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
 
   const toggleFullScreen = () => {
-    setIsFullScreen(!isFullScreen)
+    setIsFullScreen(!isFullScreen);
 
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen()
+      document.documentElement.requestFullscreen();
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen()
+        document.exitFullscreen();
       }
     }
-  }
+  };
 
   useEffect(() => {
-    fetchGame(slug)
+    fetchGame(slug);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <>
@@ -63,7 +63,7 @@ export default function GameProviderPage({ params }: PageProps) {
             </div>
           ) : (
             iframeGame && (
-              <iframe src={iframeGame} width={"100%"} height={"100%"} />
+              <iframe srcDoc={iframeGame} width={"100%"} height={"100%"} />
             )
           )}
         </div>
@@ -93,5 +93,5 @@ export default function GameProviderPage({ params }: PageProps) {
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -48,7 +48,7 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
         setIsLoading(false);
       });
 
-    setIframeGame(response.data.data.game_url);
+    setIframeGame(response.data);
   };
 
   useEffect(() => {
