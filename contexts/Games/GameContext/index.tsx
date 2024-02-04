@@ -1,10 +1,9 @@
 "use client";
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { Game, GameContextProviderProps, StartGame } from "./types";
-import { api } from "@/lib/api";
-import { parseCookies } from "nookies";
 import { useAuth } from "@/contexts/AuthContext";
+import { api } from "@/lib/api";
 import { useRouter } from "next/navigation";
+import { createContext, useContext, useEffect, useState } from "react";
+import { Game, GameContextProviderProps, StartGame } from "./types";
 interface GameContextType {
   isLoading: boolean;
   game: Game | null;
