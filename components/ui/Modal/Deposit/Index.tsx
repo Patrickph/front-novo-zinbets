@@ -97,6 +97,8 @@ export default function Deposit() {
           type: "custom",
           message: "O valor deve ser maior que R$5,00",
         });
+      } else {
+        setError("amount", { type: "custom", message: "" });
       }
     }
   }, [watch("amount")]);
