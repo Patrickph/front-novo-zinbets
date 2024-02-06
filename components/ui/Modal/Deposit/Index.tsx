@@ -11,7 +11,6 @@ import { formatBRL } from "@/utils/currency";
 import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage";
 import copyText from "@/utils/copyText";
 import { CircleDollarSign, DollarSign } from "lucide-react";
-import { watch } from "fs";
 
 interface IFormInputs {
   amount: string;
@@ -55,6 +54,7 @@ export default function Deposit() {
     handleSubmit,
     setError,
     setValue,
+    watch,
     formState: { errors },
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
