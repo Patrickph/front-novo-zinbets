@@ -28,10 +28,10 @@ const schema = yup
   .object({
     amount: yup
       .string()
-      .test("is-num", "Valor mínimo de R$1,00", (value) => {
+      .test("is-num", "Valor mínimo de R$5,00", (value) => {
         if (!value) return false;
         const amount = value.replace(/[^0-9]/g, "");
-        if (parseInt(amount) < 100) {
+        if (parseInt(amount) < 500) {
           return false;
         }
 
