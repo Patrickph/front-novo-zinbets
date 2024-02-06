@@ -80,6 +80,11 @@ export default function Register() {
         <Logo />
       </div>
 
+      <div className="justify-flex-end block mb-6">
+        <p className="text-white-400 text-md">Novo membro?</p>
+        <h1 className="text-white-700 text-xl">Cadastra-se agora, é fácil</h1>
+      </div>
+
       <BadgeErrorsMessage
         type={messageError.type}
         message={messageError.message}
@@ -156,7 +161,7 @@ export default function Register() {
         </div>
 
         <button
-          className="mt-8 flex items-center justify-center gap-2 text-white uppercase font-bold text-sm rounded-lg shadow-green bg-[#8845fa] hover:bg-[#713ad6] p-3 w-full"
+          className="mt-8 flex items-center justify-center gap-2 text-white-400  rounded-lg shadow-green bg-[#8845fa] hover:bg-[#713ad6] p-3 w-full"
           type="submit"
         >
           Criar conta <ArrowRightIcon className="w-5 h-5" />

@@ -105,7 +105,7 @@ export default function Deposit() {
 
   return (
     <>
-      <div className="text-lg text-green-500 font-bold mb-4">Depósito</div>
+      <div className="text-lg text-purple mb-4">Depósito</div>
 
       <CountDown minutes={10} />
 
@@ -119,7 +119,7 @@ export default function Deposit() {
           Possui cupom?
         </div> */}
 
-        <div className="bg-green-900/50 text-green-500 rounded p-2 text-center text-sm w-full mb-4">
+        <div className="text-green-deposit rounded p-2 text-center text-sm w-full mb-4">
           Dobramos seu depósito 100% até R$7000
         </div>
 
@@ -134,37 +134,37 @@ export default function Deposit() {
 
         <div className="flex gap-2 overflow-x-auto p-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 mb-2">
           <div
-            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 20,00")}
           >
             R$20,00
           </div>
           <div
-            className="cursor-pointer  bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            className="cursor-pointer  bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 40,00")}
           >
             R$40,00
           </div>
           <div
-            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 50,00")}
           >
             R$50,00
           </div>
           <div
-            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 100,00")}
           >
             R$100,00
           </div>
           <div
-            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 500,00")}
           >
             R$500,00
           </div>
           <div
-            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 rounded-lg font-bold"
+            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 1000,00")}
           >
             R$1000,00
@@ -183,14 +183,14 @@ export default function Deposit() {
             className="w-4 h-4 accent-green-500 text-green-600 bg-gray-100 border-gray-300 rounded "
             {...register("bonus", { value: true })}
           />
-          <label htmlFor="bonus" className="text-xs font-bold text-white ">
+          <label htmlFor="bonus" className="text-xs font-bold text-white-400 ">
             Desejo Acrescentar 100% de bônus
           </label>
         </div>
 
         <button
           type="submit"
-          className="rounded w-full bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 text-center font-bold shadow-green"
+          className="rounded w-full bg-[#8845fa] hover:bg-[#713ad6] text-white-400 p-2 text-center  shadow-green"
         >
           Gerar PIX
         </button>

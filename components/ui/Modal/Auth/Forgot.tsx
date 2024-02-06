@@ -50,7 +50,9 @@ export default function Forgot() {
       <div className="justify-center flex items-center w-full mb-10">
         <Logo />
       </div>
-
+      <div className="justify-flex-end block mb-4">
+        <h1 className="text-white-700 text-xl">Redefinir senha</h1>
+      </div>
       <BadgeErrorsMessage
         type={messageError.type}
         message={messageError.message}
@@ -69,7 +71,7 @@ export default function Forgot() {
           />
 
           <button
-            className="text-white uppercase font-bold text-sm rounded-lg shadow-green bg-[#8845fa] hover:bg-[#713ad6] p-3 w-full"
+            className="text-white-400 rounded-lg shadow-green bg-[#8845fa] hover:bg-[#713ad6] p-3 w-full"
             type="submit"
           >
             Enviar e-mail de recuperação

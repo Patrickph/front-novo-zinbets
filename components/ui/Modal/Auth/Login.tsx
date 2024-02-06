@@ -16,6 +16,7 @@ interface IFormInputs {
   password: string
 }
 
+
 const schema = yup
   .object({
     email: yup.string().email("E-mail inválido").required("E-mail obrigatório"),
@@ -56,7 +57,11 @@ export default function Login() {
       <div className="justify-center flex items-center w-full mb-10">
         <Logo />
       </div>
+      <div className="justify-flex-end block mb-6">
+        <p className="text-white-400 text-md">Já tem uma conta?</p>
+        <h1 className="text-white-700 text-xxl">Bem-vindo de volta!</h1>
 
+      </div>
       <BadgeErrorsMessage
         type={messageError.type}
         message={messageError.message}
@@ -91,7 +96,7 @@ export default function Login() {
         </div>
 
         <button
-          className="mt-8  uppercase font-bold text-sm rounded-lg text-white bg-[#8845fa] hover:bg-[#713ad6] p-3 w-full"
+          className="mt-8 rounded-lg text-white-400 bg-[#8845fa] hover:bg-[#713ad6] p-3 w-full"
           type="submit"
         >
           Entrar
