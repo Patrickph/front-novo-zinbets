@@ -5,12 +5,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import CountDown from "../../CountDown/Index";
 import Input from "../../Form/Input";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import { formatBRL } from "@/utils/currency";
 import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage";
 import copyText from "@/utils/copyText";
 import { CircleDollarSign, DollarSign } from "lucide-react";
+import { watch } from "fs";
 
 interface IFormInputs {
   amount: string;
@@ -86,6 +87,19 @@ export default function Deposit() {
         setIsLoading(false);
       });
   };
+
+  useEffect(() => {
+    const amount = watch("amount");
+
+    if (amount) {
+      if (parseInt(amount.toString().replace(/[^0-9]/g, "")) < 500) {
+        setError("amount", {
+          type: "custom",
+          message: "O valor deve ser maior que R$5,00",
+        });
+      }
+    }
+  }, [watch("amount")]);
 
   return (
     <>
