@@ -42,12 +42,12 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
     setIsLoading(true);
 
     const response = await api
-      .get<StartGame>(`/games/game-provider/start-game/${slug}`)
+      .get<any>(`/games/game-provider/start-game/${slug}`)
       .finally(() => {
         setIsLoading(false);
       });
 
-    setIframeGame(response.data.data.game_url);
+    setIframeGame(response.data);
   };
 
   useEffect(() => {

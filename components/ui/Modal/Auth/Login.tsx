@@ -1,21 +1,20 @@
-"use client"
-import { useForm, SubmitHandler } from "react-hook-form"
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
+"use client";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-import Logo from "@/components/Logo"
-import Input from "../../Form/Input"
-import { useModal } from "@/contexts/ModalContext"
-import { useAuth } from "@/contexts/AuthContext"
-import { useEffect, useState } from "react"
-import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage"
-import { KeyRound, Mail } from "lucide-react"
+import Logo from "@/components/Logo";
+import Input from "../../Form/Input";
+import { useModal } from "@/contexts/ModalContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { useEffect, useState } from "react";
+import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage";
+import { KeyRound, Mail } from "lucide-react";
 
 interface IFormInputs {
-  email: string
-  password: string
+  email: string;
+  password: string;
 }
-
 
 const schema = yup
   .object({
@@ -25,12 +24,12 @@ const schema = yup
       .min(8, "A senha deve ter no mínimo 8 caracteres")
       .required("Senha Obrigatória"),
   })
-  .required()
+  .required();
 
 export default function Login() {
-  const { setOpenModal, setCloseModal } = useModal()
-  const [messageError, setMessageError] = useState({ type: "", message: "" })
-  const { signIn } = useAuth()
+  const { setOpenModal, setCloseModal } = useModal();
+  const [messageError, setMessageError] = useState({ type: "", message: "" });
+  const { signIn } = useAuth();
 
   const {
     register,
@@ -38,19 +37,19 @@ export default function Login() {
     formState: { errors },
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
-  })
+  });
 
   const onSubmit = async (data: IFormInputs) => {
-    setMessageError({ message: "", type: "loading" })
+    setMessageError({ message: "", type: "loading" });
 
-    const response = await signIn(data.email, data.password)
-    console.log(response)
-    setMessageError({ message: response.message, type: response.type })
+    const response = await signIn(data.email, data.password);
+
+    setMessageError({ message: response.message, type: response.type });
 
     if (response.type === "success") {
-      setCloseModal()
+      setCloseModal();
     }
-  }
+  };
 
   return (
     <>
@@ -60,7 +59,6 @@ export default function Login() {
       <div className="justify-flex-end block mb-6">
         <p className="text-white-400 text-md">Já tem uma conta?</p>
         <h1 className="text-white-700 text-xxl">Bem-vindo de volta!</h1>
-
       </div>
       <BadgeErrorsMessage
         type={messageError.type}
@@ -113,5 +111,5 @@ export default function Login() {
         </b>
       </div>
     </>
-  )
+  );
 }

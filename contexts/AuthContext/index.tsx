@@ -92,7 +92,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
         phone: data.phone,
         password: data.password,
         password_confirmation: data.password_confirmation,
-        ref: data.ref,
+        ref: refUrl || ref,
       });
 
       const { token_type, access_token, user: userInfo } = response.data;
