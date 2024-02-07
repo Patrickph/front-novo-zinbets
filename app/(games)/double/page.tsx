@@ -45,8 +45,7 @@ const schema = yup
   .required();
 
 export default function DoublePage() {
-  const cookies = parseCookies();
-  const { user } = useAuth();
+  const { user, isLogged } = useAuth();
   const [messageError, setMessageError] = useState({ type: "", message: "" });
   const { wallet, fetchBalance } = useWallet();
   const { setOpenModal } = useModal();
@@ -118,7 +117,7 @@ export default function DoublePage() {
   }
 
   const onSubmit = async ({ value_to_bet, color }: IFormInputs) => {
-    if (!cookies["bet.token"]) {
+    if (!isLogged) {
       setOpenModal("login");
       return;
     }

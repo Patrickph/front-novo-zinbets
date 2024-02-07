@@ -7,7 +7,7 @@ import Register from "@/components/ui/Modal/Auth/Register";
 import Forgot from "@/components/ui/Modal/Auth/Forgot";
 import Deposit from "@/components/ui/Modal/Deposit/Index";
 import Withdraw from "@/components/ui/Modal/Withdraw/Index";
-import { parseCookies } from "nookies";
+import { useAuth } from "../AuthContext";
 
 type Children = "login" | "register" | "forgot" | "deposit" | "withdraw";
 
@@ -16,7 +16,6 @@ interface ModalContextType {
   childrenModal: React.ReactNode | null;
   setOpenModal: (children: Children) => void;
   setCloseModal: () => void;
-  name: string;
 }
 
 export const ModalContext = createContext<ModalContextType>(
@@ -26,9 +25,8 @@ export const ModalContext = createContext<ModalContextType>(
 export const ModalContextProvider = ({
   children,
 }: ModalContextProviderProps) => {
-  const cookies = parseCookies();
+  const { isLogged } = useAuth();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [name, setName] = useState<string>("");
   const [childrenModal, setChildrenModal] = useState<React.ReactNode | null>(
     null
   );
@@ -38,13 +36,14 @@ export const ModalContextProvider = ({
   };
 
   const setOpen = (children: Children) => {
-    if (
-      !cookies["bet.token"] &&
-      (children === "deposit" || children === "withdraw")
-    ) {
+    if (!isLogged && (children === "deposit" || children === "withdraw")) {
       children = "register";
     }
-    setName(children);
+
+    if (isLogged && (children === "login" || children === "register")) {
+      children = "deposit";
+    }
+
     const components = {
       login: <Login />,
       register: <Register />,
@@ -62,7 +61,6 @@ export const ModalContextProvider = ({
       value={{
         isOpenModal: isOpen,
         childrenModal,
-        name,
         setOpenModal: setOpen,
         setCloseModal: setClose,
       }}

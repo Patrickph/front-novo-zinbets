@@ -1,9 +1,9 @@
 "use client";
-import { useAuth } from "@/contexts/AuthContext";
-import { api } from "@/lib/api";
-import { useRouter } from "next/navigation";
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Game, GameContextProviderProps, StartGame } from "./types";
+import { api } from "@/lib/api";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 interface GameContextType {
   isLoading: boolean;
   game: Game | null;
@@ -17,7 +17,7 @@ export const GameContext = createContext<GameContextType>(
 
 export const GameContextProvider = ({ children }: GameContextProviderProps) => {
   const { push } = useRouter();
-  const { user } = useAuth();
+  const { isLogged } = useAuth();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [game, setGame] = useState<Game | null>(null);
   const [iframeGame, setIframeGame] = useState<string | null>(null);
@@ -42,19 +42,19 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
     setIsLoading(true);
 
     const response = await api
-      .get<any>(`/games/game-provider/start-game/${slug}`)
+      .get<StartGame>(`/games/game-provider/start-game/${slug}`)
       .finally(() => {
         setIsLoading(false);
       });
 
-    setIframeGame(response.data);
+    setIframeGame(response.data.data.game_url);
   };
 
   useEffect(() => {
-    if (game?.slug && user) {
+    if (game?.slug && isLogged) {
       startGame(game.slug);
     }
-  }, [game, user]);
+  }, [game, isLogged]);
 
   return (
     <GameContext.Provider

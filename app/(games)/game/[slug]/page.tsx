@@ -13,7 +13,7 @@ type PageProps = {
 };
 
 export default function GameProviderPage({ params }: PageProps) {
-  const { user } = useAuth();
+  const { isLogged } = useAuth();
   const { slug } = params;
   const { game, fetchGame, isLoading, iframeGame } = useGame();
   const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
@@ -53,7 +53,7 @@ export default function GameProviderPage({ params }: PageProps) {
             backgroundImage: `url('/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/background/${game?.game_id}.jpg')`,
           }}
         >
-          {!isLoading && !user ? (
+          {!isLoading && !isLogged ? (
             <div className="bg-zinc-700/40 flex justify-center items-center h-full flex-col gap-6">
               <LockClosedIcon className="w-10 h-10 text-green-500" />
 

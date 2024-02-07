@@ -1,40 +1,41 @@
-"use client"
-import { useForm } from "react-hook-form"
-import * as yup from "yup"
-import Input from "@/components/ui/Form/Input"
-import { Transition } from "@headlessui/react"
-import Image from "next/image"
-import { useEffect, useState } from "react"
-import { yupResolver } from "@hookform/resolvers/yup"
-import { useWallet } from "@/contexts/WalletContext"
-import { formatBRL } from "@/utils/currency"
-import { useModal } from "@/contexts/ModalContext"
-import { parseCookies } from "nookies"
-import { useMines } from "@/contexts/Games/MinesContext"
-import BadgeErrorsMessage from "@/components/ui/Errors/BadgeErrorsMessage"
+"use client";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import Input from "@/components/ui/Form/Input";
+import { Transition } from "@headlessui/react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useWallet } from "@/contexts/WalletContext";
+import { formatBRL } from "@/utils/currency";
+import { useModal } from "@/contexts/ModalContext";
+import { parseCookies } from "nookies";
+import { useMines } from "@/contexts/Games/MinesContext";
+import BadgeErrorsMessage from "@/components/ui/Errors/BadgeErrorsMessage";
 import {
   SpeakerWaveIcon,
   SpeakerXMarkIcon,
   ViewfinderCircleIcon,
-} from "@heroicons/react/20/solid"
+} from "@heroicons/react/20/solid";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface IFormInputs {
-  value_to_bet: string
-  number_of_bombs: number
+  value_to_bet: string;
+  number_of_bombs: number;
 }
 
 const schema = yup
   .object({
     value_to_bet: yup
       .string()
-      .test("is-num", "Valor mínimo é R$0,01", value => {
-        if (!value) return false
-        const amount = value.replace(/[^0-9]/g, "")
+      .test("is-num", "Valor mínimo é R$0,01", (value) => {
+        if (!value) return false;
+        const amount = value.replace(/[^0-9]/g, "");
         if (parseInt(amount) < 1) {
-          return false
+          return false;
         }
 
-        return true
+        return true;
       })
       .required("Valor Obrigatório"),
     number_of_bombs: yup
@@ -43,13 +44,13 @@ const schema = yup
       .max(24, "O valor máximo é 24")
       .required("Valor Obrigatório"),
   })
-  .required()
+  .required();
 
 export default function MinesPage() {
-  const cookies = parseCookies()
-  const [messageError, setMessageError] = useState({ type: "", message: "" })
-  const { wallet } = useWallet()
-  const { setOpenModal } = useModal()
+  const { isLogged } = useAuth();
+  const [messageError, setMessageError] = useState({ type: "", message: "" });
+  const { wallet } = useWallet();
+  const { setOpenModal } = useModal();
 
   const {
     fetchGame,
@@ -59,8 +60,8 @@ export default function MinesPage() {
     setCashout,
     volume,
     setVolume,
-  } = useMines()
-  const { fetchBalance } = useWallet()
+  } = useMines();
+  const { fetchBalance } = useWallet();
 
   const {
     register,
@@ -73,117 +74,119 @@ export default function MinesPage() {
     defaultValues: {
       number_of_bombs: 5,
     },
-  })
+  });
 
   function half_value_to_bet() {
-    let value = getValues("value_to_bet").replace(/[^0-9]/g, "") as any
+    let value = getValues("value_to_bet").replace(/[^0-9]/g, "") as any;
     if (value == 0) {
-      value = 2
+      value = 2;
     }
 
-    value = formatBRL(value / 100 / 2)
-    setValue("value_to_bet", value)
+    value = formatBRL(value / 100 / 2);
+    setValue("value_to_bet", value);
   }
 
   function double_value_to_bet() {
-    let value = getValues("value_to_bet").replace(/[^0-9]/g, "") as any
+    let value = getValues("value_to_bet").replace(/[^0-9]/g, "") as any;
     if (value == 0) {
-      value = 1
+      value = 1;
     }
 
-    value = (value / 100) * 2
+    value = (value / 100) * 2;
 
     if (
       value >
       ((wallet?.balance ?? 0) > 0 ? wallet?.balance ?? 0 : wallet?.bonus ?? 100)
     ) {
       value =
-        (wallet?.balance ?? 0) > 0 ? wallet?.balance ?? 0 : wallet?.bonus ?? 100
+        (wallet?.balance ?? 0) > 0
+          ? wallet?.balance ?? 0
+          : wallet?.bonus ?? 100;
     }
 
-    value = formatBRL(value)
-    setValue("value_to_bet", value)
+    value = formatBRL(value);
+    setValue("value_to_bet", value);
   }
 
   function max_value_to_bet() {
     let value = formatBRL(
       (wallet?.balance ?? 0) > 0 ? wallet?.balance ?? 0 : wallet?.bonus ?? 100
-    )
-    setValue("value_to_bet", value)
+    );
+    setValue("value_to_bet", value);
   }
 
   const onSubmit = async ({ value_to_bet, number_of_bombs }: IFormInputs) => {
-    if (!cookies["bet.token"]) {
-      setOpenModal("login")
-      return
+    if (!isLogged) {
+      setOpenModal("login");
+      return;
     }
 
     const response = await startGame({
       value_to_bet: Number(value_to_bet.replace(/[^0-9]/g, "")),
       number_of_bombs,
-    })
+    });
 
     if (response?.type === "error") {
-      setMessageError({ type: "error", message: response.message })
+      setMessageError({ type: "error", message: response.message });
     } else {
-      setMessageError({ type: "", message: "" })
+      setMessageError({ type: "", message: "" });
     }
-  }
+  };
 
   const handleClick = async (position: number) => {
-    if (!!game?.finish || !cookies["bet.token"]) {
-      return false
+    if (!!game?.finish || !isLogged) {
+      return false;
     }
 
-    await setClick(position)
-  }
+    await setClick(position);
+  };
 
   const handleCashout = () => {
-    if (!!game?.finish || !cookies["bet.token"]) {
-      return
+    if (!!game?.finish || !isLogged) {
+      return;
     }
 
-    setCashout()
-    fetchBalance()
-  }
+    setCashout();
+    fetchBalance();
+  };
 
-  const isGameActive = game == null || !!game?.finish ? false : true
+  const isGameActive = game == null || !!game?.finish ? false : true;
 
   const isGema = (index: number) => {
-    if (!game) return false
-    if (!!game?.bombs && game?.bombs.includes(index)) return false
+    if (!game) return false;
+    if (!!game?.bombs && game?.bombs.includes(index)) return false;
 
-    return !!game?.clicks && game?.clicks.includes(index)
-  }
+    return !!game?.clicks && game?.clicks.includes(index);
+  };
 
   const isBomb = (index: number) => {
-    return !!game?.bombs && game?.bombs.includes(index)
-  }
+    return !!game?.bombs && game?.bombs.includes(index);
+  };
 
   const handleToggleSound = () => {
     if (volume > 0) {
-      setVolume(0)
+      setVolume(0);
     } else {
-      setVolume(1)
+      setVolume(1);
     }
-  }
+  };
 
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen()
+      document.documentElement.requestFullscreen();
     } else {
       if (document.exitFullscreen) {
-        document.exitFullscreen()
+        document.exitFullscreen();
       }
     }
-  }
+  };
 
   useEffect(() => {
-    if (cookies["bet.token"]) {
-      fetchGame()
+    if (isLogged) {
+      fetchGame();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <div className="rounded border border-white/10 bg-[#0d0716] p-6 flex flex-col gap-6">
@@ -416,5 +419,5 @@ export default function MinesPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -5,6 +5,7 @@ import ListBetsCrash from "@/components/games/crash/ListBetsCrash";
 import LoadingNextGameCrash from "@/components/games/crash/LoadingNextGameCrash";
 import BadgeErrorsMessage from "@/components/ui/Errors/BadgeErrorsMessage";
 import Input from "@/components/ui/Form/Input";
+import { useAuth } from "@/contexts/AuthContext";
 import { useCrash } from "@/contexts/Games/CrashContext";
 import { Bet, Crash } from "@/contexts/Games/CrashContext/types";
 import { useModal } from "@/contexts/ModalContext";
@@ -41,7 +42,7 @@ const schema = yup
   .required();
 
 export default function CrashPage() {
-  const cookies = parseCookies();
+  const { isLogged } = useAuth();
   const [messageError, setMessageError] = useState({ type: "", message: "" });
   const { wallet, fetchBalance } = useWallet();
   const { setOpenModal } = useModal();
@@ -119,7 +120,7 @@ export default function CrashPage() {
     value_to_bet,
     value_auto_cashout,
   }: IFormInputs) => {
-    if (!cookies["bet.token"]) {
+    if (!isLogged) {
       setOpenModal("login");
       return;
     }
@@ -149,7 +150,7 @@ export default function CrashPage() {
   };
 
   const handleCashout = async () => {
-    if (!cookies["bet.token"] && game?.status !== "started") {
+    if (!isLogged && game?.status !== "started") {
       return;
     }
 
@@ -165,7 +166,6 @@ export default function CrashPage() {
 
   const isGameActive =
     game == null || game?.status === "pending" ? false : true;
-  const isLogged = !!cookies["bet.token"];
   const isBet = !!bet && !!bet?.id && !bet?.win;
 
   useEffect(() => {
@@ -229,7 +229,6 @@ export default function CrashPage() {
   }, [game?.multiplier]);
 
   return (
-
     <>Jogo em manutenção</>
     // <>
     //   <div className="rounded bg-zinc-700 p-6 flex flex-col gap-6">
