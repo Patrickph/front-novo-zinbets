@@ -58,9 +58,9 @@ export default function AffiliatePage() {
             <div className="bg-[#07050a] border border-white/10 col-span-2 sm:col-span-3 md:col-span-3 lg:col-span-3 p-4 rounded-xl flex justify-between items-center">
               <button
                 onClick={() => setOpenModal("withdraw")}
-                className="h-10 flex first:items-center cursor-pointer md:mx-2 rounded shadow-green shadow-[#8845fa] bg-[#8845fa] text-white hover:bg-[#8845fa]/70 px-2 py-2 text-center font-bold text-xs md:text-sm"
+                className="h-10 flex first:items-center cursor-pointer md:mx-2 rounded shadow-green shadow-[#8845fa] bg-[#8845fa] text-white-500 hover:bg-[#8845fa]/70 px-2 py-2 text-center font-bold text-xs md:text-sm"
               >
-                RESGATAR
+                Resgatar
               </button>
               <div className="flex flex-col justify-center">
                 <span className="text-white font-bold text-3xl uppercase text-right">
@@ -103,9 +103,9 @@ export default function AffiliatePage() {
             <div className="bg-[#07050a] border border-white/10 col-span-2 sm:col-span-3 md:col-span-3 lg:col-span-3 p-4 rounded-xl flex justify-between items-center">
               <button
                 onClick={() => setOpenModal("withdraw")}
-                className="h-10 flex first:items-center cursor-pointer md:mx-2 rounded shadow-green shadow-[#8745fac7] bg-[#8845fa] text-white hover:bg-[#8845fa]/70 px-2 py-2 text-center font-bold text-xs md:text-sm"
+                className="h-10 flex first:items-center cursor-pointer md:mx-2 rounded shadow-green shadow-[#8745fac7] bg-[#8845fa] text-white-500 hover:bg-[#8845fa]/70 px-2 py-2 text-center font-bold text-xs md:text-sm"
               >
-                RESGATAR
+                Resgatar
               </button>
               <div className="flex flex-col justify-center">
                 <span className="text-white font-bold text-3xl uppercase text-right">
