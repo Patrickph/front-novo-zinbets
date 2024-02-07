@@ -79,9 +79,9 @@ export default function RootLayout({
                                       <Logo />
                                     </Link>
                                   </div>
-                                </div>
 
-                                {isAuthenticated ? <Profile /> : <SignIn />}
+                                  <Profile />
+                                </div>
                               </header>
 
                               <div className="pt-20 text-white h-full  w-full flex-1 flex">
