@@ -79,9 +79,8 @@ export default function RootLayout({
                                       <Logo />
                                     </Link>
                                   </div>
-
-                                  <Profile />
                                 </div>
+                                <Profile />
                               </header>
 
                               <div className="pt-20 text-white h-full  w-full flex-1 flex">

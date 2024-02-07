@@ -1,20 +1,28 @@
+"use client";
 import axios, { AxiosError } from "axios";
-import { destroyCookie, parseCookies, setCookie } from "nookies";
 
-interface ssrAPIProps {
+interface FetchWrapperAPIProps {
   baseURL?: string;
   ctx?: any;
 }
-function ssrAPI({
+function FetchWrapperAPI({
   ctx = undefined,
   baseURL = process.env.NEXT_PUBLIC_API_URL,
-}: ssrAPIProps) {
-  let cookies = parseCookies(ctx);
+}: FetchWrapperAPIProps) {
+  let tokenStorage = "";
+
+  if (typeof window !== "undefined") {
+    const item = window.localStorage.getItem("bet.token");
+
+    tokenStorage = item ? JSON.parse(item) : null;
+  }
+
+  const bearer = tokenStorage ?? "";
 
   const api = axios.create({
     baseURL,
     headers: {
-      Authorization: cookies['bet.token'] ? `Bearer ${cookies['bet.token']}` : '',
+      Authorization: `Bearer ${bearer}`,
     },
   });
 
@@ -23,14 +31,14 @@ function ssrAPI({
       return response;
     },
     async (error: AxiosError) => {
-      if (cookies['bet.token'] && error.response?.status === 401) {
-        destroyCookie(undefined, 'bet.token', {
-          path: '/'
-        })
+      if (!!tokenStorage && error.response?.status === 401) {
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("bet.token");
+        }
 
         delete api.defaults.headers["Authorization"];
 
-        window.location.href = "/"
+        window.location.href = "/";
       }
 
       return Promise.reject(error);
@@ -38,6 +46,6 @@ function ssrAPI({
   );
 
   return api;
-};
+}
 
-export const api = ssrAPI({});
+export const api = FetchWrapperAPI({});
