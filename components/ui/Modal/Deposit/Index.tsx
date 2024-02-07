@@ -119,8 +119,8 @@ export default function Deposit() {
           Possui cupom?
         </div> */}
 
-        <div className="text-green-deposit rounded p-2 text-center text-sm w-full mb-4">
-          Dobramos seu depósito 100% até R$7000
+        <div className="bg-green-900/50 text-green-500 rounded p-2 text-center text-sm w-full mb-4">
+          Faça um depósito e ganhe R$500,00 de bônus
         </div>
 
         <Input
