@@ -145,7 +145,7 @@ export default function Withdraw() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="text-lg text-green-500 font-bold mb-4">
+      <div className="text-lg text-purple font-bold mb-4">
         Solicitar Saque
       </div>
 
@@ -189,10 +189,9 @@ export default function Withdraw() {
           <div className="floating mb-3 relative">
             <select
               {...register("wallet_id")}
-              className={`${
-                errors.wallet_id?.message &&
+              className={`${errors.wallet_id?.message &&
                 "border-red-500 border rounded-b-none"
-              } disabled:cursor-not-allowed border border-white/10 bg-[#07050a] text-base text-zinc-300 appearance-none block w-full px-4 h-14 leading-10 rounded shadow-sm placeholder-gray-400 focus:outline-none focus:ring-0`}
+                } disabled:cursor-not-allowed border border-white/10 bg-[#07050a] text-base text-zinc-300 appearance-none block w-full px-4 h-14 leading-10 rounded shadow-sm placeholder-gray-400 focus:outline-none focus:ring-0`}
               onChange={event => handleChangeWallet(event)}
             >
               {wallets?.map(wallet => (
@@ -241,7 +240,7 @@ export default function Withdraw() {
 
           <button
             type="submit"
-            className="rounded w-full bg-[#8845fa] hover:bg-[#713ad6] text-white p-2 text-center font-bold shadow-green"
+            className="rounded w-full bg-[#8845fa] hover:bg-[#713ad6] text-white-400 p-2 text-center shadow-green"
           >
             Sacar
           </button>

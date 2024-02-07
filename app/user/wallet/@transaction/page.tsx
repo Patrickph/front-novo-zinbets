@@ -44,12 +44,11 @@ export default function Transaction() {
                 pathname + "?" + createQueryString("filter[name]", "")
               )
             }}
-            className={`${
-              searchParams.get("filter[name]") == "" ||
+            className={`${searchParams.get("filter[name]") == "" ||
               !searchParams.has("filter[name]")
-                ? "bg-[#8845fa] text-white"
-                : "text-[#8845fa]"
-            } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
+              ? "bg-[#8845fa] text-white-500"
+              : "text-[#8845fa]"
+              } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white-500 border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
           >
             Todos
           </div>
@@ -59,11 +58,10 @@ export default function Transaction() {
                 pathname + "?" + createQueryString("filter[name]", "deposit")
               )
             }}
-            className={`${
-              searchParams.get("filter[name]") == "deposit"
-                ? "bg-[#8845fa] text-white"
-                : "text-[#8845fa]"
-            } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
+            className={`${searchParams.get("filter[name]") == "deposit"
+              ? "bg-[#8845fa] text-white-500"
+              : "text-[#8845fa]"
+              } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white-500 border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
           >
             DEPOSITOS
           </div>
@@ -73,11 +71,10 @@ export default function Transaction() {
                 pathname + "?" + createQueryString("filter[name]", "cashout")
               )
             }}
-            className={`${
-              searchParams.get("filter[name]") == "cashout"
-                ? "bg-[#8845fa] text-white"
-                : "text-[#8845fa]"
-            } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
+            className={`${searchParams.get("filter[name]") == "cashout"
+              ? "bg-[#8845fa] text-white-500"
+              : "text-[#8845fa]"
+              } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white-500 border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
           >
             SAQUES
           </div>
@@ -87,11 +84,10 @@ export default function Transaction() {
                 pathname + "?" + createQueryString("filter[name]", "cassino")
               )
             }}
-            className={`${
-              searchParams.get("filter[name]") == "cassino"
-                ? "bg-[#8845fa] text-white"
-                : "text-[#8845fa]"
-            } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
+            className={`${searchParams.get("filter[name]") == "cassino"
+              ? "bg-[#8845fa] text-white-500"
+              : "text-[#8845fa]"
+              } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white-500 border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
           >
             Cassino
           </div>
@@ -99,15 +95,14 @@ export default function Transaction() {
             onClick={() => {
               router.push(
                 pathname +
-                  "?" +
-                  createQueryString("filter[name]", "bonus,rollover")
+                "?" +
+                createQueryString("filter[name]", "bonus,rollover")
               )
             }}
-            className={`${
-              searchParams.get("filter[name]") == "bonus,rollover"
-                ? "bg-[#8845fa] text-white"
-                : "text-[#8845fa]"
-            } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
+            className={`${searchParams.get("filter[name]") == "bonus,rollover"
+              ? "bg-[#8845fa] text-white-500"
+              : "text-[#8845fa]"
+              } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white-500 border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
           >
             Bônus
           </div>
@@ -115,20 +110,19 @@ export default function Transaction() {
             onClick={() => {
               router.push(
                 pathname +
-                  "?" +
-                  createQueryString(
-                    "filter[name]",
-                    "affiliate_cpa,affiliate_revenue_share"
-                  )
+                "?" +
+                createQueryString(
+                  "filter[name]",
+                  "affiliate_cpa,affiliate_revenue_share"
+                )
               )
             }}
-            className={`${
-              searchParams.get("filter[name]") == "bonus,rollover"
-                ? "bg-[#8845fa] text-white"
-                : "text-[#8845fa]"
-            } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
+            className={`${searchParams.get("filter[name]") == "bonus,rollover"
+              ? "bg-[#8845fa] text-white-500"
+              : "text-[#8845fa]"
+              } flex items-center text-[#8845fa] justify-center cursor-pointer uppercase hover:bg-[#8845fa] hover:text-white-500 border border-[#8845fa]  font-bold text-xs p-2 px-3 rounded`}
           >
-            Affiliado
+            Afiliado
           </div>
         </div>
 
@@ -197,11 +191,10 @@ export default function Transaction() {
                       </td>
                       <td className="px-6 py-2">
                         <div
-                          className={`${
-                            "border-" +
+                          className={`${"border-" +
                             TransactionStatusColor[transaction.status] +
                             "-500"
-                          } border text-white flex items-center justify-center rounded p-0.5`}
+                            } border text-white flex items-center justify-center rounded p-0.5`}
                         >
                           {TransactionStatus[transaction.status]}
                         </div>
@@ -229,13 +222,12 @@ export default function Transaction() {
                 {transactions.meta.links.map((link, index) => (
                   <div
                     key={index}
-                    className={`${
-                      link.active
-                        ? "bg-zinc-500"
-                        : link.url == null
+                    className={`${link.active
+                      ? "bg-zinc-500"
+                      : link.url == null
                         ? "bg-zinc-900"
                         : "bg-zinc-900 hover:bg-zinc-950 "
-                    } w-10 h-10 flex items-center justify-center cursor-pointer`}
+                      } w-10 h-10 flex items-center justify-center cursor-pointer`}
                     onClick={() => {
                       let pageNumber: any = link.label
 

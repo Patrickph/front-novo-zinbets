@@ -2545,6 +2545,12 @@ select:-webkit-autofill:focus {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-white-500:hover {
+  --tw-text-opacity: 1;
+  font-weight: 500;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:text-white\/70:hover {
   color: rgb(255 255 255 / 0.7);
 }

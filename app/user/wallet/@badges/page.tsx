@@ -20,7 +20,7 @@ export default function Badges() {
         <div className="rounded w-full border border-white/10 bg-[#0d0716] p-6 flex flex-col">
           <div className="flex justify-between mb-6">
             <h2 className="text-white text-lg font-bold uppercase">Carteira</h2>
-            <div className="bg-[#8845fa] h-fit px-3 text-white font-semibold text-xs p-1 rounded">
+            <div className="bg-[#8845fa] h-fit px-3 text-white-500 text-xs p-1 rounded">
               Ativa
             </div>
           </div>
@@ -35,7 +35,7 @@ export default function Badges() {
               <button
                 type="button"
                 onClick={() => setOpenModal("deposit")}
-                className="flex items-center gap-1 rounded-md bg-[#8845fa] px-3 py-2 text-sm font-bold uppercase text-white shadow-green hover:bg-[#6c37c7]"
+                className="flex items-center gap-1 rounded-md bg-[#8845fa] px-3 py-2 text-sm text-white-500 text-white shadow-green hover:bg-[#6c37c7]"
               >
                 Depositar
               </button>
@@ -43,7 +43,7 @@ export default function Badges() {
               <button
                 type="button"
                 onClick={() => setOpenModal("withdraw")}
-                className="flex items-center gap-1 rounded-md bg-zinc-500 px-3 py-2 text-sm font-bold uppercase text-zinc-200 shadow-sm hover:bg-zinc-600"
+                className="flex items-center gap-1 rounded-md bg-zinc-500 px-3 py-2 text-sm text-white-500 text-zinc-200 shadow-sm hover:bg-zinc-600"
               >
                 Sacar
               </button>
@@ -80,7 +80,7 @@ export default function Badges() {
                     {formatBRL(
                       ((bonus?.credit_hold ?? 0) *
                         (bonus?.rollover?.multiplier ?? 50)) /
-                        100
+                      100
                     )}
                   </div>
                   <div className="text-xs text-right">Meta do rollover</div>
@@ -89,12 +89,11 @@ export default function Badges() {
                   <div
                     className="rounded h-full bg-green-500"
                     style={{
-                      width: `${
-                        ((bonus?.rollover?.amount ?? 0) /
-                          ((bonus?.credit_hold ?? 0) *
-                            (bonus?.rollover?.multiplier ?? 50))) *
+                      width: `${((bonus?.rollover?.amount ?? 0) /
+                        ((bonus?.credit_hold ?? 0) *
+                          (bonus?.rollover?.multiplier ?? 50))) *
                         100
-                      }%`,
+                        }%`,
                     }}
                   ></div>
                 </div>
@@ -112,11 +111,10 @@ export default function Badges() {
                     <div
                       className="rounded h-full bg-green-500"
                       style={{
-                        width: `${
-                          ((bonus?.rollover?.count ?? 0) /
-                            (bonus?.rollover?.rollover_count ?? 0)) *
+                        width: `${((bonus?.rollover?.count ?? 0) /
+                          (bonus?.rollover?.rollover_count ?? 0)) *
                           100
-                        }%`,
+                          }%`,
                       }}
                     ></div>
                   </div>
