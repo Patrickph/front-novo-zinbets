@@ -10,7 +10,8 @@ export default function Modal() {
     childrenModal,
     setCloseModal: setClose,
   } = useModal();
-
+  const [first, setFirst] = useState(false);
+  const [confirm, setConfirm] = useState(false);
   let initialFocus = useRef(null);
 
   return (
@@ -44,11 +45,11 @@ export default function Modal() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="min-h-screen sm:min-h-0 sm:h-auto w-full flex flex-col overflow-y-auto sm:overflow-visible justify-center  sm:max-w-sm md:max-w-md transform sm:rounded-xl bg-zinc-700 p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="min-h-screen sm:min-h-0 sm:h-auto w-full flex flex-col overflow-y-auto sm:overflow-visible justify-center  sm:max-w-sm md:max-w-md transform sm:rounded-xl border border-white/10 bg-[#0d0716] p-6 text-left align-middle shadow-xl transition-all">
                 <div
                   onClick={setClose}
                   aria-label="Fechar Modal"
-                  className="cursor-pointer shadow-lg absolute z-50 top-3 right-3 sm:-top-2 sm:-right-2 rounded bg-zinc-800 hover:bg-zinc-800 p-2 w-10 h-10 flex items-center justify-center"
+                  className="cursor-pointer shadow-lg absolute z-50 top-3 right-3 rounded  hover:bg-zinc-800 p-2 w-10 h-10 flex items-center justify-center"
                 >
                   <XMarkIcon width={20} height={20} />
                 </div>

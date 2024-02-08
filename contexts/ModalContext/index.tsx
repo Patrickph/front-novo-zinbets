@@ -27,6 +27,7 @@ export const ModalContextProvider = ({
 }: ModalContextProviderProps) => {
   const { isLogged } = useAuth();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [name, setName] = useState<string>("");
   const [childrenModal, setChildrenModal] = useState<React.ReactNode | null>(
     null
   );
