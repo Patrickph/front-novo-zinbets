@@ -41,14 +41,13 @@ export default function Profile() {
         <div className="h-11 flex gap-4 items-center">
           <div
             onClick={() => setOpenModal("login")}
-            className="font-bold hover:text-white/70 text-sm cursor-pointer"
+            className="font-bold hover:text-white/70 text-white-500 text-sm cursor-pointer"
           >
             Entrar
           </div>
 
           <div
             onClick={() => setOpenModal("register")}
-
             className="h-11 items-center cursor-pointer rounded-2xl flex gap-1  text-white-500 bg-[#8845fa] hover:bg-[#713ad6] px-3 py-2 text-center text-sm"
           >
             <ArrowRightOnRectangleIcon width={16} />
