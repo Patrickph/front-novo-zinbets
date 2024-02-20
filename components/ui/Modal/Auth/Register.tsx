@@ -50,6 +50,7 @@ export default function Register() {
     register,
     handleSubmit,
     setError,
+    setValue,
     formState: { errors },
   } = useForm<SignUpFormData>({
     resolver: yupResolver(schema),
