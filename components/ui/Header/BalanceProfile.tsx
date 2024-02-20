@@ -37,7 +37,7 @@ export default function BalanceProfile() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="divide-y divide-zinc-800 absolute overflow-hidden flex flex-col bg-[#07050a] border border-white/10 right-0 top-12 w-44 rounded-lg ">
+        <Menu.Items className="divide-y text-white divide-zinc-800 absolute overflow-hidden flex flex-col bg-[#07050a] border border-white/10 right-0 top-12 w-44 rounded-lg ">
           <div className="text-sm flex justify-between hover:bg-zinc-800 p-2">
             <span className="font-light">Real:</span>
             <span>{formatBRL(wallet?.balance ?? 0.0)}</span>
