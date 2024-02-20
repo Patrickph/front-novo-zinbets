@@ -1,10 +1,9 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { AuthContextProviderProps, User, SignUpFormData } from "./types";
-import { parseCookies, setCookie, destroyCookie } from "nookies";
 import { api } from "@/lib/api";
 import { useLocalStorage } from "@/utils/useLocalStorage";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { createContext, useContext, useEffect } from "react";
+import { AuthContextProviderProps, SignUpFormData, User } from "./types";
 
 interface AuthContextType {
   user: User | null;
@@ -36,7 +35,6 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
   const refUrl = search.get("ref");
 
-  const cookies = parseCookies();
   const router = useRouter();
 
   const resetPassword = async (
@@ -82,8 +80,6 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   };
 
   const signUp = async (data: SignUpFormData) => {
-    const ref = cookies["ref"] ?? null;
-
     try {
       const response = await api.post("/register", {
         name: data.name,
@@ -92,7 +88,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
         phone: data.phone,
         password: data.password,
         password_confirmation: data.password_confirmation,
-        ref: refUrl || ref,
+        ref: data.ref,
       });
 
       const { token_type, access_token, user: userInfo } = response.data;
@@ -146,10 +142,6 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   };
 
   const signOut = () => {
-    destroyCookie(undefined, "bet.token", {
-      path: "/",
-    });
-
     delete api.defaults.headers["Authorization"];
 
     setToken(null);

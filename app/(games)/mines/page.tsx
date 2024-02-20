@@ -1,23 +1,22 @@
 "use client";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
+import BadgeErrorsMessage from "@/components/ui/Errors/BadgeErrorsMessage";
 import Input from "@/components/ui/Form/Input";
-import { Transition } from "@headlessui/react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { useAuth } from "@/contexts/AuthContext";
+import { useMines } from "@/contexts/Games/MinesContext";
+import { useModal } from "@/contexts/ModalContext";
 import { useWallet } from "@/contexts/WalletContext";
 import { formatBRL } from "@/utils/currency";
-import { useModal } from "@/contexts/ModalContext";
-import { parseCookies } from "nookies";
-import { useMines } from "@/contexts/Games/MinesContext";
-import BadgeErrorsMessage from "@/components/ui/Errors/BadgeErrorsMessage";
+import { Transition } from "@headlessui/react";
 import {
   SpeakerWaveIcon,
   SpeakerXMarkIcon,
   ViewfinderCircleIcon,
 } from "@heroicons/react/20/solid";
-import { useAuth } from "@/contexts/AuthContext";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 
 interface IFormInputs {
   value_to_bet: string;

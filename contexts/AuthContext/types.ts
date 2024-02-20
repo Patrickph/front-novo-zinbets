@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface AuthContextProviderProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export type User = {
@@ -17,7 +17,6 @@ export type User = {
   permissions: string[];
 };
 
-
 export type SignUpFormData = {
   name: string;
   document: string;
@@ -25,4 +24,5 @@ export type SignUpFormData = {
   phone: string;
   password: string;
   password_confirmation: string;
-}
+  ref?: string | null;
+};

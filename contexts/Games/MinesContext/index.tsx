@@ -1,12 +1,14 @@
 "use client";
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { Mines, MinesContextProviderProps, StartGameFormData } from "./types";
-import { api } from "@/lib/api";
-import { AxiosResponse } from "axios";
-import { MinesResponse } from "./types";
-import { parseCookies } from "nookies";
-import useSound from "use-sound";
 import { useAuth } from "@/contexts/AuthContext";
+import { api } from "@/lib/api";
+import { createContext, useContext, useState } from "react";
+import useSound from "use-sound";
+import {
+  Mines,
+  MinesContextProviderProps,
+  MinesResponse,
+  StartGameFormData,
+} from "./types";
 
 interface MinesContextType {
   isLoading: boolean;

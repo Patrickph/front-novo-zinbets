@@ -1,34 +1,30 @@
-import { cookies } from "next/headers";
-
-import Link from "next/link";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { Inter } from "next/font/google";
+import Link from "next/link";
 
-import Sidebar from "@/components/ui/Sidebar";
-import Footer from "@/components/ui/Footer";
 import Logo from "@/components/Logo";
+import Footer from "@/components/ui/Footer";
+import Sidebar from "@/components/ui/Sidebar";
 import TopBar from "@/components/ui/Topbar";
 
 import { ModalContextProvider } from "@/contexts/ModalContext";
 
-import Modal from "@/components/ui/Modal/Index";
-import SignIn from "@/components/ui/Header/SignIn";
 import Profile from "@/components/ui/Header/Profile";
-import { AuthContextProvider } from "@/contexts/AuthContext";
-import { Theme } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
-import "./globals.css";
-import "./layout.css";
+import Modal from "@/components/ui/Modal/Index";
 import { AccountContextProvider } from "@/contexts/AccountContext";
-import { WalletContextProvider } from "@/contexts/WalletContext";
-import { TransactionContextProvider } from "@/contexts/TransactionContext";
-import { MinesContextProvider } from "@/contexts/Games/MinesContext";
 import { AffiliateContextProvider } from "@/contexts/AffiliateContext";
+import { AuthContextProvider } from "@/contexts/AuthContext";
 import { CrashContextProvider } from "@/contexts/Games/CrashContext";
 import { DoubleContextProvider } from "@/contexts/Games/DoubleContext";
-import { Metadata } from "next";
 import { GameContextProvider } from "@/contexts/Games/GameContext";
-import MenuMobile from "@/components/ui/Sidebar/MenuMobile";
+import { MinesContextProvider } from "@/contexts/Games/MinesContext";
+import { TransactionContextProvider } from "@/contexts/TransactionContext";
+import { WalletContextProvider } from "@/contexts/WalletContext";
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
+import { Metadata } from "next";
+import "./globals.css";
+import "./layout.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,8 +39,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const isAuthenticated = cookies().has("bet.token");
-
   return (
     <AuthContextProvider>
       <ModalContextProvider>
