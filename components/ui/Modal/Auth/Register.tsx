@@ -15,7 +15,7 @@ import { SignUpFormData } from "@/contexts/AuthContext/types";
 import BadgeErrorsMessage from "../../Errors/BadgeErrorsMessage";
 import { Fingerprint, KeyRound, Mail, Phone, User2 } from "lucide-react";
 import ConfirmRegister from "./ConfirmRegister";
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
@@ -37,13 +37,14 @@ const schema = yup
       .string()
       .oneOf([yup.ref("password"), ""], "As senhas devem ser iguais")
       .required("Confirmação de senha obrigatória"),
+    ref: yup.string().optional(),
   })
   .required();
 
 export default function Register() {
   const { setOpenModal, setCloseModal } = useModal();
   const [messageError, setMessageError] = useState({ type: "", message: "" });
-  const { signUp } = useAuth();
+  const { signUp, ref } = useAuth();
   const [close, closeHandler] = useState(false);
   const {
     register,
@@ -73,6 +74,13 @@ export default function Register() {
       setCloseModal();
     }
   };
+
+  useEffect(() => {
+    if (ref) {
+      setValue("ref", ref);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
