@@ -1,9 +1,8 @@
 "use client";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import Image from "next/image";
-import { formatBRL } from "@/utils/currency";
 import { useWallet } from "@/contexts/WalletContext";
+import { formatBRL } from "@/utils/currency";
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 export default function BalanceProfile() {
   const { wallet, isLoading, fetchBalance } = useWallet();
