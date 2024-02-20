@@ -41,7 +41,7 @@ export default function Sidebar() {
             <img width={30} src="/zin-curta.png" />
           </h1>
         </button>
-        <button
+        {/* <button
           onClick={() => {
             ///@ts-ignore
             window.Intercom("show");
@@ -64,7 +64,7 @@ export default function Sidebar() {
           </svg>
 
           <h1 className="text-sm">Suporte</h1>
-        </button>
+        </button> */}
       </div>
       <div
         className={`${

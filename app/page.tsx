@@ -8,15 +8,15 @@ import CarouselItemsCrash from "@/components/ui/Carousel/Items-crash";
 import { useEffect } from "react";
 
 export default async function Home() {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      ///@ts-ignore
-      window.Intercom("boot", {
-        api_base: "https://api-iam.intercom.io",
-        app_id: "z00t30ir",
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     ///@ts-ignore
+  //     window.Intercom("boot", {
+  //       api_base: "https://api-iam.intercom.io",
+  //       app_id: "z00t30ir",
+  //     });
+  //   }
+  // }, []);
 
   return (
     <>
