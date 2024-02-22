@@ -1,21 +1,23 @@
+"use client";
+import React, { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useModal } from "@/contexts/ModalContext";
 
-
 export default function Modal() {
   const {
-
-    const [confirm, setConfirm] = useState(false);
+    isOpenModal: isOpen,
+    childrenModal,
+    setCloseModal: setClose,
+  } = useModal();
+  const [first, setFirst] = useState(false);
+  const [confirm, setConfirm] = useState(false);
   let initialFocus = useRef(null);
-
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-
       <Dialog
         initialFocus={initialFocus}
-
         as="div"
         className="relative z-50"
         onClose={setClose}
@@ -29,9 +31,8 @@ export default function Modal() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-
+          <div className="fixed inset-0 bg-zinc-950 opacity-60" />
         </Transition.Child>
-        <div className="fixed inset-0 bg-zinc-950 opacity-60" />
 
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center sm:p-4 text-center">
@@ -53,7 +54,6 @@ export default function Modal() {
                   <XMarkIcon width={20} height={20} />
                 </div>
 
-
                 {/* hack para o focus não pegar no primeiro input */}
                 <button
                   type="button"
@@ -61,16 +61,12 @@ export default function Modal() {
                   ref={initialFocus}
                 ></button>
 
-
                 {childrenModal}
               </Dialog.Panel>
             </Transition.Child>
-
           </div>
         </div>
       </Dialog>
     </Transition>
-
-
   );
 }
