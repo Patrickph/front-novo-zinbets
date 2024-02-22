@@ -28,7 +28,7 @@ const schema = yup
   .object({
     amount: yup
       .string()
-      .test("is-num", "Valor mínimo de R$5,00", (value) => {
+      .test("is-num", "Valor mínimo do depósito é de R$ 10,00", (value) => {
         if (!value) return false;
         const amount = value.replace(/[^0-9]/g, "");
         if (parseInt(amount) < 500) {
@@ -95,7 +95,7 @@ export default function Deposit() {
       if (parseInt(amount.toString().replace(/[^0-9]/g, "")) < 500) {
         setError("amount", {
           type: "custom",
-          message: "Valor mínimo do depósito é de R$ 5,00",
+          message: "Valor mínimo do depósito é de R$ 10,00",
         });
       } else {
         setError("amount", { type: "custom", message: "" });
@@ -184,7 +184,7 @@ export default function Deposit() {
             {...register("bonus", { value: true })}
           />
           <label htmlFor="bonus" className="text-xs font-bold text-white-400 ">
-            Desejo Acrescentar 100% de bônus
+            Desejo Acrescentar o bônus
           </label>
         </div>
 
