@@ -13,8 +13,8 @@ export default function LastGamesCrash() {
           <div
             key={game.hash}
             className={`
-              ${game.multiplier > 2 ? 'text-green-500 hover:text-green-600' : 'text-zinc-400 hover:text-zinc-500'}
-             bg-zinc-800 cursor-pointer text-xs font-semibold p-2 rounded transition-transform`}>
+              ${game.multiplier > 2 ? 'text-purple hover:text-zinc-500' : 'text-zinc-400 hover:text-zinc-500'}
+             bg-double-players cursor-pointer text-xs font-semibold p-2 rounded transition-transform`}>
             {game.multiplier.toFixed(2)}X
           </div>
         ))}

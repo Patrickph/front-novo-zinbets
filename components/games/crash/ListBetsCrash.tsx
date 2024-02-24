@@ -13,7 +13,7 @@ export default function ListBetsCrash() {
   }, 0)
 
   return (
-    <div className="rounded bg-zinc-700 p-6 flex flex-col gap-6">
+    <div className="rounded bg-[#0d0716] p-6 flex flex-col gap-6">
       <div className="w-full flex items-center justify-between border-b border-zinc-500">
         <div>
           <b className="mr-1">
@@ -26,7 +26,7 @@ export default function ListBetsCrash() {
 
 
       <table className="shadow rounded-xl overflow-hidden">
-        <thead className="bg-zinc-800 p-2 text-xs">
+        <thead className="bg-double-players p-2 text-xs">
           <tr>
             <th className="text-left p-3 w-2/5">Jogador</th>
             <th className="text-left p-3">Aposta</th>

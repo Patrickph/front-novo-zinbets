@@ -136,8 +136,8 @@ export default function ChartCrash({ started_at, float }: ChartCrashProps) {
         label: 'Crash',
         data: [1, started_at ? float : 0.8],
         fill: false,
-        borderColor: '#3bfb82',
-        backgroundColor: '#3bfb82c2',
+        borderColor: '#8845fa',
+        backgroundColor: '#8845fac2',
       },
     ],
   };

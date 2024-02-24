@@ -229,7 +229,7 @@ export default function CrashPage() {
 
   return (
     <>
-      <div className="rounded bg-zinc-700 p-6 flex flex-col gap-6">
+      <div className="rounded bg-[#0d0716] p-6 flex flex-col gap-6">
         <div className="grid grid-cols-3 gap-4">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -249,7 +249,7 @@ export default function CrashPage() {
                 type="button"
                 disabled={isBet}
                 onClick={half_value_to_bet}
-                className="disabled:cursor-not-allowed disabled:hover:bg-zinc-800 disabled:hover:text-zinc-400 h-10 text-sm flex justify-center items-center cursor-pointer font-semibold bg-zinc-800 hover:text-zinc-950 hover:bg-green-500 flex-1 text-center text-zinc-400"
+                className="disabled:cursor-not-allowed disabled:hover:bg-zinc-800 disabled:hover:text-zinc-400 h-10 text-sm flex justify-center items-center cursor-pointer font-semibold bg-[#8845fa]/30 hover:text-white hover:bg-[#8845fa]  flex-1 text-center text-zinc-400"
               >
                 1/2
               </button>
@@ -257,7 +257,7 @@ export default function CrashPage() {
                 type="button"
                 disabled={isBet}
                 onClick={double_value_to_bet}
-                className="disabled:cursor-not-allowed disabled:hover:bg-zinc-800 disabled:hover:text-zinc-400 h-10 text-sm flex justify-center items-center cursor-pointer font-semibold bg-zinc-800 hover:text-zinc-950 hover:bg-green-500 flex-1 text-center text-zinc-400"
+                className="disabled:cursor-not-allowed disabled:hover:bg-zinc-800 disabled:hover:text-zinc-400 h-10 text-sm flex justify-center items-center cursor-pointer font-semibold bg-[#8845fa]/30 hover:text-white hover:bg-[#8845fa]  flex-1 text-center text-zinc-400"
               >
                 2x
               </button>
@@ -265,7 +265,7 @@ export default function CrashPage() {
                 type="button"
                 disabled={isBet}
                 onClick={max_value_to_bet}
-                className="disabled:cursor-not-allowed disabled:hover:bg-zinc-800 disabled:hover:text-zinc-400 h-10 text-sm flex justify-center items-center cursor-pointer font-semibold bg-zinc-800 hover:text-zinc-950 hover:bg-green-500 flex-1 text-center text-zinc-400"
+                className="disabled:cursor-not-allowed disabled:hover:bg-zinc-800 disabled:hover:text-zinc-400 h-10 text-sm flex justify-center items-center cursor-pointer font-semibold bg-[#8845fa]/30 hover:text-white hover:bg-[#8845fa]  flex-1 text-center text-zinc-400"
               >
                 MAX
               </button>
@@ -287,7 +287,7 @@ export default function CrashPage() {
               ) : (
                 <button
                   type="submit"
-                  className="h-12 w-full text-center cursor-pointer  rounded shadow-green shadow-green-500 bg-green-500 text-zinc-900 hover:bg-green-700 px-2 py-2  font-bold text-xs md:text-sm"
+                  className="h-12 w-full text-center cursor-pointer  rounded shadow-green shadow-[#8845fa] bg-[#8845fa] text-white-500 hover:bg-[#7139d3] px-2 py-2 text-xs md:text-sm"
                 >
                   Começar o jogo
                 </button>
@@ -313,7 +313,7 @@ export default function CrashPage() {
               <LastGamesCrash />
             </div>
 
-            <div className="w-full relative aspect-video bg-zinc-900 rounded-xl overflow-hidden p-3">
+            <div className="w-full relative aspect-video bg-[#0d0716] rounded-xl overflow-hidden p-3">
               <ChartCrash
                 started_at={game?.started_at}
                 float={game?.multiplier ?? 0}
