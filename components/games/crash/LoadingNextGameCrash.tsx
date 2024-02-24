@@ -55,7 +55,7 @@ export default function LoadingNextGameCrash({ date }: LoadingNextGameCrashProps
   return (
     <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
       <div className="relative rounded-xl w-[90%] h-10 bg-zinc-700 px-3 justify-center items-center flex">
-        <span className="z-50 text-green-500 text-sm text-center font-semibold">
+        <span className="z-50 text-purple text-sm text-center font-semibold">
           Começando em: {timeLeft.seconds.toString().padStart(2, '0')}s
         </span>
         <div
