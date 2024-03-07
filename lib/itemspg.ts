@@ -6,6 +6,12 @@ export const ItemsPg = [
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/126.jpg`
   },
   {
+    name: 'Fortune Dragon',
+    key: 1695365,
+    href: '/game/fortune-dragon',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1695365.jpg`
+  },
+  {
     name: 'Fortune Ox',
     key: 98,
     href: '/game/fortune-ox',
@@ -22,12 +28,6 @@ export const ItemsPg = [
     key: 68,
     href: '/game/fortune-mouse',
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/68.jpg`
-  },
-  {
-    name: 'Fortune Dragon',
-    key: 1695365,
-    href: '/game/fortune-dragon',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1695365.jpg`
   },
   {
     name: 'Fortune Gods',
