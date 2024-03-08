@@ -1,5 +1,6 @@
 "use client";
 import CarouselBanner from "@/components/ui/Carousel/Banner";
+import CarouselBannerFooter from "@/components/ui/Carousel/Banner-footer";
 import CarouselItems from "@/components/ui/Carousel/Items";
 import CarouselItemsLive from "@/components/ui/Carousel/Items-live";
 import CarouselItemsPg from "@/components/ui/Carousel/Items-pg";
@@ -38,6 +39,9 @@ export default async function Home() {
       </div>
       <div className="w-full z-10">
         <CarouselItemsCrash />
+      </div>
+      <div className="w-full z-10">
+        <CarouselBannerFooter />
       </div>
     </>
   );
