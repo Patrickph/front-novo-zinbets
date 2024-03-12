@@ -95,7 +95,7 @@ export default function Deposit() {
       if (parseInt(amount.toString().replace(/[^0-9]/g, "")) < 500) {
         setError("amount", {
           type: "custom",
-          message: "Valor mínimo do depósito é de R$ 10,00",
+          message: "Valor mínimo do depósito é de R$ 15,00",
         });
       } else {
         setError("amount", { type: "custom", message: "" });

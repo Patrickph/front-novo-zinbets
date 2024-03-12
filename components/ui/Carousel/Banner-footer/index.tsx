@@ -12,38 +12,15 @@ import "swiper/css/navigation"
 
 import "./styles.css"
 
-export default function CarouselBanner() {
+export default function CarouselBannerFooter() {
   const carousel = [
     {
       key: 0,
-      src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/banner-boas-vindas.png`,
+      src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/banner-deposite-jogue.png`,
       alt: "banner1",
       link: "#",
     },
-    {
-      key: 1,
-      src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/banner-dragon.png`,
-      alt: "banner2",
-      link: "https://zinbets.com/game/fortune-dragon",
-    },
-    {
-      key: 2,
-      src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/banner-corolla.png`,
-      alt: "banner3",
-      link: "#",
-    },
-    {
-      key: 3,
-      src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/banner-tiger.png`,
-      alt: "banner4",
-      link: "https://zinbets.com/game/fortune-tiger",
-    },
-    {
-      key: 4,
-      src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/banner-iphone.png`,
-      alt: "banner5",
-      link: "#",
-    },
+
   ]
 
 
