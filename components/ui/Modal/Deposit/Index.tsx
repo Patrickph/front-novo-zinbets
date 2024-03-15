@@ -140,6 +140,12 @@ export default function Deposit() {
             R$20,00
           </div>
           <div
+            className="cursor-pointer bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
+            onClick={() => setValue("amount", "R$ 30,00")}
+          >
+            R$30,00
+          </div>
+          <div
             className="cursor-pointer  bg-[#8845fa] hover:bg-[#713ad6] text-white-600 p-2 rounded-lg "
             onClick={() => setValue("amount", "R$ 40,00")}
           >
