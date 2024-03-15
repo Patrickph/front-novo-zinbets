@@ -269,7 +269,7 @@ export default function DoublePage() {
                 type="button"
                 className={`
                 ${watch("color") == "green" ? "border-4 border-red-500" : ""}
-                cursor-pointer flex-1 h-12 rounded-lg font-semibold bg-green-500 text-zinc-700 flex items-center justify-center`}
+                cursor-pointer flex-1 h-12 rounded-lg font-semibold bg-[#8845fa] text-zinc-700 flex items-center justify-center`}
                 onClick={() => setValue("color", "green")}
               >
                 x2
@@ -298,7 +298,7 @@ export default function DoublePage() {
               ) : (
                 <button
                   type="submit"
-                  className="h-12 w-full text-center cursor-pointer  rounded shadow-green shadow-[#8845fa] bg-[#8845fa] text-white hover:bg-[#7139d3] px-2 py-2  font-bold text-xs md:text-sm"
+                  className="h-12 w-full text-center cursor-pointer  rounded shadow-green shadow-[#8845fa] bg-[#8845fa] text-white-500 hover:bg-[#7139d3] px-2 py-2  text-xs md:text-sm"
                 >
                   Começar o jogo
                 </button>

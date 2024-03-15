@@ -56,7 +56,7 @@ export default function LoadingNextGameDouble({ date }: LoadingNextGameDoublePro
 
   return (
     <div className="relative rounded-xl w-full h-10 bg-zinc-700 px-3 justify-center items-center flex">
-      <span className="z-50 text-green-500 text-sm text-center font-semibold">
+      <span className="z-50 text-purple text-sm text-center font-semibold">
         Começando em: {timeLeft.seconds.toString().padStart(2, '0')}:{timeLeft.miliseconds}
       </span>
       <div
