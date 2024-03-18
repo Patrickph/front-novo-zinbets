@@ -1,27 +1,57 @@
 export const ItemsPg = [
   {
-    name: 'Fortune Tiger',
-    key: 126,
-    href: '/game/fortune-tiger',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/126.jpg`
-  },
-  {
     name: 'Fortune Dragon',
     key: 1695365,
     href: '/game/fortune-dragon',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1695365.jpg`
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1695365.png`
+  },
+  {
+    name: 'Fortune Tiger',
+    key: 126,
+    href: '/game/fortune-tiger',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/126.png`
   },
   {
     name: 'Fortune Ox',
     key: 98,
     href: '/game/fortune-ox',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/98.jpg`
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/98.png`
   },
   {
     name: 'Fortune Rabbit',
     key: 1543462,
     href: '/game/fortune-rabbit',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1543462.jpg`
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1543462.png`
+  },
+  {
+    name: 'Ganesha Fortune',
+    key: 75,
+    href: '/game/ganesha-fortune',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/75.png`
+  },
+  {
+    name: 'Prosperity Fortune Tree',
+    key: 1312883,
+    href: '/game/prosperity-fortune-tree',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1312883.png`
+  },
+  {
+    name: 'Double Fortune',
+    key: 48,
+    href: '/game/double-fortune',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/48.png`
+  },
+  {
+    name: 'Leprechaun Riches',
+    key: 60,
+    href: '/game/leprechaun-riches',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/60.png`
+  },
+  {
+    name: 'Cocktail Nights',
+    key: 117,
+    href: '/game/cocktail-nights',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/117.png`
   },
   {
     name: 'Fortune Mouse',
@@ -41,18 +71,7 @@ export const ItemsPg = [
     href: '/game/midas-fortune',
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1402846.jpg`
   },
-  {
-    name: 'Ganesha Fortune',
-    key: 75,
-    href: '/game/ganesha-fortune',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/75.jpg`
-  },
-  {
-    name: 'Double Fortune',
-    key: 48,
-    href: '/game/double-fortune',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/48.jpg`
-  },
+
   {
     name: 'Mahjong Ways',
     key: 65,
@@ -70,12 +89,6 @@ export const ItemsPg = [
     key: 87,
     href: '/game/treasures-of-aztec',
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/87.jpg`
-  },
-  {
-    name: 'Leprechaun Riches',
-    key: 60,
-    href: '/game/leprechaun-riches',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/60.jpg`
   },
   {
     name: 'Lucky Neko',
@@ -141,12 +154,6 @@ export const ItemsPg = [
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/135.jpg`
   },
   {
-    name: 'Prosperity Fortune Tree',
-    key: 1312883,
-    href: '/game/prosperity-fortune-tree',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1312883.jpg`
-  },
-  {
     name: 'Diner Delights',
     key: 1372643,
     href: '/game/diner-delights',
@@ -194,12 +201,7 @@ export const ItemsPg = [
     href: '/game/jurassic-kingdom',
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/110.jpg`
   },
-  {
-    name: 'Cocktail Nights',
-    key: 117,
-    href: '/game/cocktail-nights',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/117.jpg`
-  },
+
 
   {
     name: 'Speed Winner',
