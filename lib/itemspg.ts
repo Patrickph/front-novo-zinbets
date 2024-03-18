@@ -24,6 +24,12 @@ export const ItemsPg = [
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1543462.png`
   },
   {
+    name: 'Fortune Mouse',
+    key: 68,
+    href: '/game/fortune-mouse',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/68.jpg`
+  },
+  {
     name: 'Ganesha Fortune',
     key: 75,
     href: '/game/ganesha-fortune',
@@ -42,6 +48,12 @@ export const ItemsPg = [
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/48.png`
   },
   {
+    name: 'Midas Fortune',
+    key: 1402846,
+    href: '/game/midas-fortune',
+    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1402846.jpg`
+  },
+  {
     name: 'Leprechaun Riches',
     key: 60,
     href: '/game/leprechaun-riches',
@@ -54,22 +66,10 @@ export const ItemsPg = [
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/117.png`
   },
   {
-    name: 'Fortune Mouse',
-    key: 68,
-    href: '/game/fortune-mouse',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/68.jpg`
-  },
-  {
     name: 'Fortune Gods',
     key: 3,
     href: '/game/fortune-gods',
     src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/3.jpg`
-  },
-  {
-    name: 'Midas Fortune',
-    key: 1402846,
-    href: '/game/midas-fortune',
-    src: `/${process.env.NEXT_PUBLIC_SITE_NAME}/games/pg/thumb/1402846.jpg`
   },
 
   {
