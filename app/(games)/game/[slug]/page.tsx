@@ -63,11 +63,11 @@ export default function GameProviderPage({ params }: PageProps) {
             </div>
           ) : (
             iframeGame &&
-            (game && game?.games_provider?.type === "incorporate" && (
-              <iframe srcDoc={iframeGame} width={"100%"} height={"100%"} />
-            ),
-            game && game?.games_provider?.type === "iframe" && (
+            game &&
+            (game?.games_provider?.type === "iframe" ? (
               <iframe src={iframeGame} width={"100%"} height={"100%"} />
+            ) : (
+              <iframe srcDoc={iframeGame} width={"100%"} height={"100%"} />
             ))
           )}
         </div>
